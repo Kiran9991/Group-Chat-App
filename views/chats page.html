@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat page</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-header_nav">
+            <ul class="main-header_item-list">
+                <li class="main-header_item"><a class="active" href="/login">Login</a></li>
+                <li class="main-header_item"><a href="/">Chats</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form action="/" method="POST" onSubmit = "storeData()">
+        <div>
+            <label for="message"></label>
+            <input type="hidden" name="username" id="username"><br><br>
+            <button type="submit">Send</button>
+        </div>
+    </form>
+    
+</body>
+<script>
+    function storeData(e) {
+        e.preventDefault();
+        document.getElementById('username').value = localStorage.getItem('username');
+    }
+</script>
+</html>
